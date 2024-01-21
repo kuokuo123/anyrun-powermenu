@@ -6,6 +6,8 @@ A simple [anyrun](https://github.com/Kirottu/anyrun) plugin to shutdown computer
 
 Simple as it seems.
 
+![Demo Video](https://github.com/kuokuo123/anyrun-powermenu/raw/main/asset/demo.mkv?raw=true)
+
 ## Configuration
 
 Default config
