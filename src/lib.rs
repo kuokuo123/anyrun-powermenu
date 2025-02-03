@@ -93,7 +93,7 @@ fn get_matches(input: RString, config: &Config) -> RVec<Match> {
         .iter()
         .filter_map(|engine| {
             matcher
-                .fuzzy_match(&engine.name(), input)
+                .fuzzy_match(engine.name(), input)
                 .map(|score| (engine, score))
         })
         .collect::<Vec<_>>();
@@ -106,9 +106,9 @@ fn get_matches(input: RString, config: &Config) -> RVec<Match> {
         .into_iter()
         .map(|(engine, _)| Match {
             title: engine.name().into(),
-            description: ROption::RSome(format!("{}", engine.cmd()).into()),
+            description: ROption::RSome(engine.cmd().to_string().into()),
             use_pango: false,
-            icon: ROption::RSome(format!("{}", engine.icon()).into()),
+            icon: ROption::RSome(engine.icon().to_string().into()),
             id: ROption::RNone,
         })
         .collect()
